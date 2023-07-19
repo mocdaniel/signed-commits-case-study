@@ -68,3 +68,12 @@ The fourth commit is very similar to the first one:
 - it is `verified`
 
 The only difference is a tiny detail: Instead of a **GPG Key ID** we see a **SSH Key Fingerprint** when clicking on the `verified` badge now.
+
+### 5. Commit - signed with an unverified SSH key
+
+Let's go ahead and sign our fifth commit with a non-verified SSH key, similar to commit 2:
+
+- the author is correct
+- ...but the signature isn't
+
+Once again, GitHub warns uns that it couldn't verify whether the stated author actually *is* the author, due to the signature not being verified. That's good!
