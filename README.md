@@ -1,6 +1,6 @@
 # Signed Commits - a case study
 
-Signing commits drastically hardens your repository against attempts to commit malicious code, e.g. via commit spoofing. Commit signing in addition to some features of GitHub, such as [Vigilante mode](https://docs.github.com/en/authentication/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits), can help you make sure to only accept verified commits by contributors you know and trust. 
+Signing commits drastically hardens your repository against attempts to commit malicious code, e.g. via commit spoofing. Commit signing in addition to some features of GitHub, such as [Vigilant mode](https://docs.github.com/en/authentication/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits), can help you make sure to only accept verified commits by contributors you know and trust. 
 
 This repository attempts to serve as a demo of the "look 'n feel" of commit signing on GitHub, and the different possibilities to do so.
 
@@ -48,3 +48,12 @@ Date:   Wed Jul 19 18:05:13 2023 +0200
 
     First commit
 ```
+### 3. Commit - Who's cloudnativeclutter?!
+
+The third commit is *definitely* weird:
+
+- it shows **cloudnativeclutter** (my blog's GitHub user) as author
+- again, the commit is `unverified`, this time because I got **vigilant mode** configured for this account
+
+Spoofing commits is as easy as changing the `user.email` and `author.email` field of your git config, thus changing the email address **GitHub** sees upon committing. Since GitHub is a **collaborative coding platform**, it will try to resolve this email address and display the author's information - totally fooling everyone who doesn't look twice!
+
