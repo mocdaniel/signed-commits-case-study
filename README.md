@@ -57,3 +57,14 @@ The third commit is *definitely* weird:
 
 Spoofing commits is as easy as changing the `user.email` and `author.email` field of your git config, thus changing the email address **GitHub** sees upon committing. Since GitHub is a **collaborative coding platform**, it will try to resolve this email address and display the author's information - totally fooling everyone who doesn't look twice!
 
+
+## Using SSH keys
+
+### 4. Commit - signed with a verified SSH key
+
+The fourth commit is very similar to the first one:
+
+- it comes from the repository's owner
+- it is `verified`
+
+The only difference is a tiny detail: Instead of a **GPG Key ID** we see a **SSH Key Fingerprint** when clicking on the `verified` badge now.
