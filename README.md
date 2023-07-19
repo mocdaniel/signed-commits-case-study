@@ -17,3 +17,34 @@ The first commit is an authentic one:
 
 You can have a look at the **commit history** of a repository at all times by navigating to the `Commits` tab in the top of the repo, or [following this link](https://github.com/mocdaniel/signed-commits-case-study/commits/main).
 
+### 2. Commit - signed with a non-verified GPG key
+
+The second commit is a bit weird:
+
+- it seems to originate from `mocdaniel`
+- **but** the GPG key is `unverified`?
+
+Maybe the user just messed up his key management, or he forgot to **upload his public gpg signing key** for this key. Maybe it's a quite intricate attempt of getting malicious code in - in general it's better do decline commits like this or have a proper second look!
+
+You can do so by cloning the repository and looking at the history via `git log --show-signature`, btw:
+
+```console
+git log --show-signature
+commit 1bc84ab1f6b65e55e9dfec883fbe65c494d689d5 (HEAD -> main)
+gpg: Signature made Wed 19 Jul 2023 06:07:01 PM CEST
+gpg:                using EDDSA key 5530A1A2EF240BCE0AE9185EF478C71B38B9AD9E
+gpg: Good signature from "Daniel Bodky <daniel.bodky@netways.de>" [ultimate]
+Author: Daniel Bodky <dbodky@gmail.com>
+Date:   Wed Jul 19 18:07:01 2023 +0200
+
+    Second commit
+
+commit 60b9d6a151cd08a21f134bb941cb4dbfc9cf395a
+gpg: Signature made Wed 19 Jul 2023 06:05:13 PM CEST
+gpg:                using EDDSA key 738DC9BC3F567CB282E5B29C9E12D1B1F1A84FA8
+gpg: Good signature from "Daniel Bodky <dbodky@gmail.com>" [ultimate]
+Author: Daniel Bodky <dbodky@gmail.com>
+Date:   Wed Jul 19 18:05:13 2023 +0200
+
+    First commit
+```
